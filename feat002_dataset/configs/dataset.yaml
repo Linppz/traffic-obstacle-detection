@@ -1,0 +1,16 @@
+# Ultralytics YOLOv8 数据集配置
+# 路径相对本文件所在目录；最终合并集由 build_dataset.py 生成到 output/yolo_merged
+path: ../output/yolo_merged
+train: images/train
+val: images/val
+test: images/test
+
+nc: 7
+names:
+  0: person
+  1: car
+  2: truck
+  3: bus
+  4: bicycle
+  5: motorcycle
+  6: traffic_cone

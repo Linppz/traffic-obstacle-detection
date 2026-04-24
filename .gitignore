@@ -1,0 +1,76 @@
+# ==== 敏感文件（绝对不能提交） ====
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*secret*
+*credential*
+
+# ==== Python ====
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+.coverage.*
+*.egg-info/
+
+# ==== Java / Spring Boot / Maven ====
+target/
+*.class
+*.jar
+!feat006_backend/api/storage/**/*.jar
+.mvn/wrapper/maven-wrapper.jar
+hs_err_pid*.log
+
+# ==== Node / Vue / Vite ====
+node_modules/
+.vite/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==== IDE / OS ====
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ==== 运行时产物（不入版本控制） ====
+feat006_backend/api/storage/uploads/
+feat006_backend/api/storage/videos/
+feat006_backend/api/storage/annotated/
+feat006_backend/infer/runs/
+
+# ==== 构建产物（可选保留；当前仓库保留 dist 以便快速部署） ====
+# feat007_frontend/web/dist/
+
+# ==== 临时与备份 ====
+*.tmp
+*.bak
+*.swp
+*~
+_renumber_tmp.py
+
+# ==== 模型文件（均从 Hugging Face 分发，不入库）====
+# HF: https://huggingface.co/Pengzhen23/py-yolo-traffic-obstacle
+feat005_training/weights_backup/*.pt
+feat006_backend/infer/models/*.onnx
+
+# ==== 毕业论文原稿（防查重/防泄露，永不入库） ====
+feat010_thesis/
+
+# ==== Web 工程部分（本仓库聚焦算法主线，不展示前后端 CRUD） ====
+feat006_backend/api/
+feat006_backend/docs/
+feat007_frontend/

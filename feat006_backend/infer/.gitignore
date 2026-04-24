@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+.env
+.idea/
+.vscode/
+# models/*.onnx  # 本仓库需展示部署权重，允许提交
+models/*.pt
+*.log

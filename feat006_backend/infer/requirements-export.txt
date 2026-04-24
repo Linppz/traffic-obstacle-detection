@@ -1,0 +1,5 @@
+ultralytics==8.4.40
+torch==2.2.2
+torchvision==0.17.2
+onnx==1.16.0
+onnxsim==0.4.36

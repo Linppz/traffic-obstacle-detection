@@ -1,0 +1,80 @@
+{
+  "target_classes": ["person", "car", "truck", "bus", "bicycle", "motorcycle", "traffic_cone"],
+  "target_ids": {
+    "person": 0,
+    "car": 1,
+    "truck": 2,
+    "bus": 3,
+    "bicycle": 4,
+    "motorcycle": 5,
+    "traffic_cone": 6
+  },
+  "sources": {
+    "bdd100k": {
+      "map": {
+        "person": "person",
+        "rider": "person",
+        "car": "car",
+        "truck": "truck",
+        "bus": "bus",
+        "bike": "bicycle",
+        "motor": "motorcycle"
+      },
+      "drop": ["train", "traffic light", "traffic sign"]
+    },
+    "cityscapes": {
+      "map": {
+        "person": "person",
+        "persongroup": "person",
+        "rider": "person",
+        "ridergroup": "person",
+        "car": "car",
+        "cargroup": "car",
+        "truck": "truck",
+        "truckgroup": "truck",
+        "caravan": "truck",
+        "trailer": "truck",
+        "bus": "bus",
+        "bicycle": "bicycle",
+        "bicyclegroup": "bicycle",
+        "motorcycle": "motorcycle",
+        "motorcyclegroup": "motorcycle"
+      },
+      "drop": ["on rails", "train", "license plate"]
+    },
+    "kitti": {
+      "map": {
+        "Pedestrian": "person",
+        "Person_sitting": "person",
+        "Car": "car",
+        "Van": "car",
+        "Truck": "truck",
+        "Cyclist": "bicycle"
+      },
+      "drop": ["Tram", "DontCare", "Misc"]
+    },
+    "coco": {
+      "coco_id_map": {
+        "1": "person",
+        "2": "bicycle",
+        "3": "car",
+        "4": "motorcycle",
+        "6": "bus",
+        "8": "truck"
+      }
+    },
+    "roboflow_cone": {
+      "map": {
+        "cone": "traffic_cone",
+        "traffic_cone": "traffic_cone",
+        "traffic cone": "traffic_cone",
+        "Cone": "traffic_cone"
+      }
+    },
+    "nuimages": {
+      "map": {
+        "movable_object.trafficcone": "traffic_cone"
+      }
+    }
+  }
+}

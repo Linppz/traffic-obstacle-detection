@@ -1,0 +1,16 @@
+# YOLOv8 数据集配置 —— 含扩散增强
+# train 包含 feat-002 train + feat-003 扩散合成；val/test 保持原样
+path: /root/workspace/项目文件夹/AI生成文件/feat002_dataset/output/yolo_merged_with_aug
+train: images/train
+val: images/val
+test: images/test
+
+nc: 7
+names:
+  0: person
+  1: car
+  2: truck
+  3: bus
+  4: bicycle
+  5: motorcycle
+  6: traffic_cone
