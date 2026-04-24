@@ -74,6 +74,33 @@ Final deployed weight: `run_Bp` (lr=1e-3) → `v8m_aug_b.onnx`.
 
 ---
 
+## Model weights — download from Hugging Face
+
+All model artifacts are hosted on Hugging Face (this repo keeps code only):
+
+**🤗 [Pengzhen23/py-yolo-traffic-obstacle](https://huggingface.co/Pengzhen23/py-yolo-traffic-obstacle)**
+
+| File on HF | Put at (local) | Purpose |
+|---|---|---|
+| `deployment/v8m_aug_b.onnx` | `feat006_backend/infer/models/v8m_aug_b.onnx` | Inference service (required) |
+| `weights_backup/run_B_v8m_aug_best.pt` | `feat005_training/weights_backup/run_B_v8m_aug_best.pt` | Fine-tuning / re-export (optional) |
+
+**One-liner download**:
+
+```bash
+pip install -U huggingface_hub
+hf download Pengzhen23/py-yolo-traffic-obstacle \
+  deployment/v8m_aug_b.onnx \
+  --local-dir feat006_backend/infer/ \
+  --local-dir-use-symlinks False
+# -> feat006_backend/infer/deployment/v8m_aug_b.onnx
+# Then move/symlink to feat006_backend/infer/models/v8m_aug_b.onnx
+mkdir -p feat006_backend/infer/models
+mv feat006_backend/infer/deployment/v8m_aug_b.onnx feat006_backend/infer/models/
+```
+
+---
+
 ## Deploy the inference service
 
 ```bash
@@ -81,7 +108,7 @@ cd feat006_backend/infer
 python3.11 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# Start FastAPI server (loads models/v8m_aug_b.onnx on startup)
+# Start FastAPI server (loads models/v8m_aug_b.onnx on startup — ensure it's downloaded, see above)
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8001
 
 # Smoke-test
